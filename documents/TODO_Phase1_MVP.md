@@ -6,7 +6,7 @@ This phase focuses on delivering the core, essential functionality of the TODO l
 
 - [x] `[Setup-1]` Initialize Next.js project with TypeScript and TailwindCSS.
 -   `[Setup-2]` Set up Supabase project (Database, Auth).
--   `[Setup-3]` Configure Vercel deployment for the project.
+- [x] `[Setup-3]` Configure Vercel deployment for the project.
 -   `[Setup-4]` Define basic database schema in Supabase (users, tasks tables - minimal fields: user id, email, password hash; task id, user id, title, status).
 - [x] `[Setup-5]` Implement basic ESLint configuration.
 
