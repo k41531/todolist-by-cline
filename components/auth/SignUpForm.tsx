@@ -28,8 +28,12 @@ export default function SignUpForm() {
       if (error) throw error;
       console.log('Sign up successful:', data);
       // TODO: Add user feedback (e.g., redirect or success message)
-    } catch (error: any) {
-      console.error('Error signing up:', error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error('Error signing up:', error.message);
+      } else {
+        console.error('An unknown error occurred during sign up:', error);
+      }
       // TODO: Add user feedback for error
     }
   };

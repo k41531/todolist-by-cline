@@ -13,8 +13,12 @@ export default function Home() {
       if (error) throw error;
       console.log('Logout successful');
       router.push('/login'); // Redirect to login after logout
-    } catch (error: any) {
-      console.error('Error logging out:', error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error('Error logging out:', error.message);
+      } else {
+        console.error('An unknown error occurred during logout:', error);
+      }
       // TODO: Add user feedback for error
     }
   };

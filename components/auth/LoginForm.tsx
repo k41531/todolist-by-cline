@@ -29,8 +29,12 @@ export default function LoginForm() {
       console.log('Login successful:', data);
       // TODO: Add user feedback (e.g., redirect or success message)
       // TODO: Implement session management [Auth-4] - likely redirect here
-    } catch (error: any) {
-      console.error('Error logging in:', error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error('Error logging in:', error.message);
+      } else {
+        console.error('An unknown error occurred during login:', error);
+      }
       // TODO: Add user feedback for error
     }
   };
